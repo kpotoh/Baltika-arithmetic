@@ -1,5 +1,5 @@
 # Baltika-arithmetic
-!(https://vk.com/photo59025752_456240715)
+![re](https://vk.com/photo59025752_456240715)
 Make calculations with favourite beer
 
 Use notebook or script and calculate with beer numbers. Simple arithmetic but huge potential. Trey work only with pics directory. You can make multiplication, division, subtraction and addition (* / - + respectively). 
