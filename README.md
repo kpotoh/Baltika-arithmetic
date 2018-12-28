@@ -1,6 +1,6 @@
 # Baltika-arithmetic
 
-![ODS stickers](https://github.com/Yorko/mlcourse.ai/blob/master/img/ods_stickers.jpg)
+![Example](Baltika-arithmetic/pics/example.jpg)
 
 Make calculations with favourite beer
 
