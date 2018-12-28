@@ -1,6 +1,6 @@
 # Baltika-arithmetic
 
-![Example](https://github.com/KPOTOH/Baltika-arithmetic/pics/example.jpg)
+![Example](https://github.com/KPOTOH/Baltika-arithmetic/blob/master/pics/example.jpg)
 
 Make calculations with favourite beer
 
