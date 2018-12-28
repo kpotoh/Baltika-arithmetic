@@ -9,7 +9,7 @@ Use notebook or script and calculate with beer numbers. Simple arithmetic but hu
 ## Arguments for script
   -s, --string STRING     expression to calculate;
   
-  -o, --out_file FILE     file to image saving; image is in png format;
+  -o, --out_file FILE     to save image in png format;
   
   -w, --with_calc         with this option expression will be calculated if this is possiple (only true expressions don't cause 
                           an error); without the option only depict numbers and signs (useful in date visualisation or similar);
