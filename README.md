@@ -5,6 +5,11 @@
 Make calculations with favourite beer
 
 Use notebook or script and calculate with beer numbers. Simple arithmetic but huge potential. Trey work only with pics directory. You can make multiplication, division, subtraction and addition (* / - + respectively). 
+#### Used libraries
+- PIL
+- numpy
+- matplotlib
+
 
 ## Arguments for script
   -s, --string STRING     expression to calculate;
