@@ -21,4 +21,4 @@ Use notebook or script and calculate with beer numbers. Simple arithmetic but hu
                           
 Examples is in notebook. Example of expression string - '1+9/3'
 
-![Example2](https://github.com/KPOTOH/Baltika-arithmetic/blob/master/pics/example.jpg)
+![Example2](https://github.com/KPOTOH/Baltika-arithmetic/blob/master/pics/example2.png)
