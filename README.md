@@ -19,4 +19,6 @@ Use notebook or script and calculate with beer numbers. Simple arithmetic but hu
   -w, --with_calc         with this option expression will be calculated if this is possiple (only true expressions don't cause 
                           an error); without the option only depict numbers and signs (useful in date visualisation or similar);
                           
-Examples is in notebook. Example of expression string - '56+47/38*29-10'
+Examples is in notebook. Example of expression string - '1+9/3'
+
+![Example2](https://github.com/KPOTOH/Baltika-arithmetic/blob/master/pics/example.jpg)
