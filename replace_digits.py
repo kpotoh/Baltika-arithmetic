@@ -100,11 +100,26 @@ def replace_digits_in_image(input_path, output_path, pics_dir=PICS_DIR):
             # Paste using the alpha channel as a mask
             img.paste(custom_img, (paste_x, paste_y), custom_img)
 
-    # Save result as RGB (drop alpha for standard image formats)
+    # Save result with high quality: prefer PNG (lossless) or, for JPEG,
+    # use a high quality and disable chroma subsampling to avoid compression artifacts.
     output_dir = os.path.dirname(os.path.abspath(output_path))
     if not os.path.isdir(output_dir):
         raise OSError('Output directory does not exist: {}'.format(output_dir))
-    img.convert('RGB').save(output_path)
+
+    ext = os.path.splitext(output_path)[1].lower()
+    if ext in ('.jpg', '.jpeg'):
+        img_rgb = img.convert('RGB')
+        img_rgb.save(
+            output_path,
+            format='JPEG',
+            quality=95,
+            subsampling=0,
+            optimize=True,
+        )
+    else:
+        # Default to PNG which is lossless
+        img.save(output_path, format='PNG', optimize=True)
+
     print('Result saved to {}'.format(output_path))
 
 

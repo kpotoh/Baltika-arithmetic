@@ -24,6 +24,7 @@ st.set_page_config(
     page_title='Baltika Digit Replacer',
     page_icon='🍺',
     layout='centered',
+    initial_sidebar_state='expanded',
 )
 
 st.title('🍺 Baltika Digit Replacer')
@@ -111,7 +112,8 @@ if file_bytes is not None:
                 if os.path.exists(output_path):
                     os.unlink(output_path)
 
-
+st.space('large')
+st.markdown('---')
 with st.expander("See explanation"):
     st.write(
         """
@@ -121,3 +123,28 @@ with st.expander("See explanation"):
         After processing, you can download the resulting image with the replaced digits.
         """
     )
+    # Show a montage of all beer digit images (0-9)
+    try:
+        digit_paths = [os.path.join(PICS_DIR, f"{i}.png") for i in range(10)]
+        digit_imgs = [Image.open(p).convert('RGBA') for p in digit_paths if os.path.exists(p)]
+        if digit_imgs:
+            # Normalize heights and stitch horizontally
+            target_h = 100
+            resized = [img.resize((max(1, int(img.width * target_h / img.height)), target_h), Image.LANCZOS) for img in digit_imgs]
+            total_w = sum(im.width for im in resized)
+            montage = Image.new('RGBA', (total_w, target_h), (255, 255, 255, 0))
+            x = 0
+            for im in resized:
+                montage.paste(im, (x, target_h - im.height), im)
+                x += im.width
+            # Save montage to an in-memory PNG (lossless) and display that raw bytes
+            buf = io.BytesIO()
+            montage.convert('RGB').save(buf, format='PNG', optimize=True)
+            buf.seek(0)
+            png_bytes = buf.getvalue()
+            st.image(png_bytes, caption='Beer digits 0–9', width=650)
+            st.download_button('Download beer digits (PNG)', data=png_bytes, file_name='beer_digits.png', mime='image/png')
+        else:
+            st.write('Digit assets not found in pics/.')
+    except Exception as e:
+        st.write(f'Could not load beer digits: {e}')
