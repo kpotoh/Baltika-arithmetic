@@ -1,0 +1,16 @@
+name: baltika
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - easyocr==1.7.2
+    - Pillow==12.1.1
+    - numpy==2.4.2
+    - opencv-python-headless==4.13.0.92
+    - torch==2.10.0
+    - torchvision==0.25.0
+    - streamlit==1.54.0
