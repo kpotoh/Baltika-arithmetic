@@ -19,10 +19,11 @@ st.title('Legacy Baltika Digit Replacer')
 
 st.write('Enter an expression composed of digits and operators (+ - * /).')
 expr_input = st.text_input('Expression', value='123+456')
-with st.expander("Options"):
-    with_calc = st.checkbox('Calculate result and append =answer', value=True)
+cols = st.columns(2)
+with cols[0]:
+    with_calc = st.checkbox('Calculate result and append "=answer"', value=False)
+with cols[1]:
     width = st.slider('Digit image width (px)', 80, 400, 150)
-
 
 def _load_assets(pics_dir, width):
     nums = [Image.open(os.path.join(pics_dir, f'{i}.png')).convert('RGBA') for i in range(10)]
