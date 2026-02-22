@@ -12,7 +12,7 @@ import os
 import streamlit as st
 from PIL import Image
 
-from replace_digits import PICS_DIR
+PICS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pics')
 
 st.set_page_config(page_title='Legacy Baltika', page_icon='🍺', layout='centered')
 st.title('Legacy Baltika Digit Replacer')
