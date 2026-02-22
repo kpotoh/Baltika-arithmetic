@@ -12,7 +12,7 @@ import os
 import streamlit as st
 from PIL import Image
 
-PICS_DIR = '../pics'
+PICS_DIR = 'pics'
 
 st.set_page_config(page_title='Legacy Baltika', page_icon='🍺', layout='centered')
 st.title('Legacy Baltika Digit Replacer')
