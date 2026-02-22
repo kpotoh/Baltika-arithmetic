@@ -153,11 +153,7 @@ if file_bytes is not None:
                     mime='image/png',
                 )
             except requests.exceptions.ConnectionError:
-                st.error(
-                    "❌ Cannot reach the remote server. "
-                    "Check that the server is running and that `API_URL` in "
-                    "`.streamlit/secrets.toml` is correct."
-                )
+                st.error("❌ Cannot reach the remote server.")
             except requests.exceptions.Timeout:
                 st.error(
                     "❌ The request to the remote server timed out. "
@@ -165,10 +161,6 @@ if file_bytes is not None:
                 )
             except requests.exceptions.HTTPError as exc:
                 if exc.response is not None and exc.response.status_code == 401:
-                    st.error(
-                        "❌ Authentication failed. "
-                        "Check that `API_KEY` in `.streamlit/secrets.toml` matches "
-                        "the key configured on the server."
-                    )
+                    st.error("❌ Authentication failed. ")
                 else:
                     st.error(f"❌ Server returned an error: {exc}")
