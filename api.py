@@ -8,6 +8,9 @@ digits using EasyOCR, and returns the processed PNG image.
 
 Secured with an API key passed in the X-API-Key request header.
 
+Install backend deps with:
+    conda env create -f environment-api.yml
+
 Run with:
     API_KEY=your-secret-key uvicorn api:app --host 0.0.0.0 --port 8000
 """

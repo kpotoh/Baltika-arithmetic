@@ -1,0 +1,14 @@
+name: baltika-api
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - easyocr==1.7.2
+  - pillow
+  - numpy
+  - pip
+  - pip:
+    - fastapi>=0.110.0
+    - uvicorn[standard]>=0.29.0
+    - python-multipart>=0.0.9
